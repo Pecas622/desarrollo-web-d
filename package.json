@@ -1,0 +1,12 @@
+{
+  "name": "entrega-tres-pecas",
+  "version": "1.0.0",
+  "private": true,
+  "devDependencies": {
+    "sass": "^1.75.0"
+  },
+  "scripts": {
+    "build": "sass scss:css --no-source-map",
+    "watch": "sass --watch scss:css"
+  }
+}
