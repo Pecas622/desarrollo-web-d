@@ -1,199 +1,129 @@
-/* ===== BASE ===== */
-html {
-    font-size: 16px;
-    scroll-behavior: smooth;
+@charset "UTF-8";
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
 }
 
 body {
-    font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
-    color: #111827;
+    margin: 0;
+    font-family: "Inter", sans-serif;
     background: #ffffff;
-    line-height: 1.6;
+    color: #111827;
 }
 
-/* ===== TITULOS ===== */
-h1, h2, h3, h4, h5, h6 {
-    line-height: 1.2;
-    margin-bottom: .5rem;
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* ----------------- TIPOGRAFÍA ----------------- */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-weight: 700;
+    margin: 0 0 0.5rem;
 }
 
-h1 {
-    font-size: 2rem;   /* antes $fs-xl */
-}
-
-h2 {
-    font-size: 1.5rem; /* antes $fs-lg */
-}
-
-/* ===== TEXTO ===== */
 p {
-    margin-bottom: 1rem;
-    color: #666666; /* antes $color-muted */
+    color: #6b7280;
 }
 
-/* ===== ACCESIBILIDAD ===== */
-.sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0,0,0,0);
-    border: 0;
+/* ----------------- HEADER ----------------- */
+header {
+    background: #fff;
+    padding: 1rem 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
 
-/* ===== TRANSICIÓN GLOBAL ===== */
-* {
-    transition: all .2s ease-in-out;
-}
-
-/* ===== RESPONSIVE ===== */
-@media (min-width: 768px) {
-    h1 {
-        font-size: 2.5rem; /* antes $fs-xxl */
-    }
-
-    h2 {
-        font-size: 2rem;   /* antes $fs-xl */
-    }
-}
-/* ===== CONTACTO ===== */
-.contacto {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 2rem 1rem;
-}
-
-.contacto h2 {
-    margin-bottom: .5rem;
-    font-size: 1.8rem;
+header .nav-link {
     color: #111827;
-}
-
-.contacto p {
-    color: #4b5563;
-    margin-bottom: 2rem;
-}
-
-/* ===== FORMULARIO ===== */
-.contacto-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1.2rem;
-}
-
-.contacto-form label {
-    font-weight: 600;
-    color: #111827;
-    margin-bottom: .2rem;
-}
-
-.contacto-form input,
-.contacto-form textarea {
-    width: 100%;
-    padding: .75rem 1rem;
-    border: 1px solid #d1d5db;
-    border-radius: 6px;
-    font-size: 1rem;
-    color: #111827;
-    background: #f9fafb;
-}
-
-.contacto-form input:focus,
-.contacto-form textarea:focus {
-    outline: none;
-    border-color: #2b6cb0;
-    box-shadow: 0 0 4px rgba(43, 108, 176, 0.4);
-}
-
-/* ===== BOTÓN ===== */
-.contacto-form button {
-    padding: .75rem 1rem;
-    background: #2b6cb0;
-    color: #fff;
-    font-size: 1.1rem;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-weight: 600;
-}
-
-.contacto-form button:hover {
-    background: #1e4f80;
-}
-
-/* ===== HEADER ===== */
-header.bg-dark {
-    background: #111827 !important;
-}
-
-/* ===== NAV LINKS ===== */
-.nav-link {
-    opacity: .9;
     font-weight: 500;
 }
 
-.nav-link:hover {
-    opacity: 1;
+header .nav-link:hover {
+    color: #0071e3;
 }
-/* ===== CATÁLOGO ===== */
 
-h1.text-center {
-    font-size: 2rem;
+/* ----------------- HERO ----------------- */
+.hero {
+    padding: 4rem 1rem;
+    text-align: center;
+}
+
+.hero img {
+    max-width: 320px;
+    margin: 2rem auto 0;
+    filter: drop-shadow(0 12px 30px rgba(0, 0, 0, 0.15));
+}
+
+/* ----------------- CARDS ----------------- */
+.card {
+    border-radius: 15px;
+    border: 1px solid #eee;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
+    transition: 0.2s;
+
+    /* NUEVO → TODAS LAS CARDS MISMO ALTO */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+}
+
+/* Ajusta el contenido interno */
+.card-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Hace que el párrafo crezca para empujar el precio hacia abajo */
+.card-body p {
+    flex: 1;
     margin-bottom: 1rem;
-    color: #111827;
 }
 
-.cardProducto {
-    border: 1px solid #e5e7eb;
-    border-radius: 10px;
-    overflow: hidden;
-    background: #ffffff;
-    transition: transform .2s ease, box-shadow .2s ease;
+/* ----------------- TABLA ----------------- */
+.table-striped tbody tr:nth-child(odd) {
+    background: #eef6ff;
 }
 
-.cardProducto:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+/* ----------------- FORMULARIOS ----------------- */
+form {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
 }
 
-.cardProducto img {
-    width: 100%;
-    height: 230px;
-    object-fit: cover;
+form textarea {
+    resize: vertical;
 }
 
-.cardProducto .card-body h2 {
-    color: #111827;
-    font-size: 1.2rem;
-    margin-bottom: .5rem;
-    font-weight: 700;
-}
-
-.cardProducto .card-body p {
+/* ----------------- FOOTER ----------------- */
+footer {
+    text-align: center;
+    padding: 2rem 1rem;
     color: #6b7280;
-    font-size: .95rem;
-    margin-bottom: .5rem;
+    border-top: 1px solid #eee;
 }
 
-.cardProducto .card-body span {
-    color: #111827;
-    font-size: 1.2rem;
-}
+/* ----------------- RESPONSIVE ----------------- */
+@media (max-width: 768px) {
+    .hero {
+        padding: 2rem 1rem;
+    }
 
-/* ===== RESPONSIVE PARA EL CATÁLOGO ===== */
-
-@media (max-width: 576px) {
-    .cardProducto img {
-        height: 200px;
+    .hero img {
+        max-width: 240px;
     }
 }
 
-/* ===== FOOTER ===== */
-footer p {
-    font-size: .9rem;
-    opacity: .85;
-}
-
+/*# sourceMappingURL=styles.css.map */
