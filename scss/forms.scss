@@ -1,0 +1,10 @@
+form {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: $shadow-soft;
+
+    textarea {
+        resize: vertical;
+    }
+}

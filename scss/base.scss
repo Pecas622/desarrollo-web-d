@@ -1,0 +1,28 @@
+/* ===== RESET GLOBAL ===== */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: $font-main;
+    background: $color-bg;
+    color: $color-text;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* ===== TIPOGRAFÍA ===== */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+p {
+    color: $color-muted;
+}
